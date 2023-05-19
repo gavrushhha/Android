@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity{
     ArrayList<DataModel> dataModelArrayList = new ArrayList<>();
 
     public static final String API_KEY = "GKKSdcAtrgVwo79F6a7fV5eUtJpEM34Y";
-    public static final String BASE_URL = "https://api.giphy.com/v1/gifs/trending?api_keys=";
+    public static final String BASE_URL = "https://api.giphy.com/v1/gifs/trending?api_key=";
 
     String url = BASE_URL+API_KEY;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity{
                         JSONObject obj = dataArray.getJSONObject(i);
 
                         JSONObject obj1 = obj.getJSONObject("images");
-                        JSONObject obj2 = obj1.getJSONObject("downsised_medium");
+                        JSONObject obj2 = obj1.getJSONObject("original");
                         String sourceUrl = obj2.getString("url");
 
                         dataModelArrayList.add(new DataModel(sourceUrl));
